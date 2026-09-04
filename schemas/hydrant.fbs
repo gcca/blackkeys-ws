@@ -1,0 +1,8 @@
+namespace blackkeys.schemas;
+
+table HydrationMessage {
+  name:string (required);
+}
+
+root_type HydrationMessage;
+file_identifier "BKHM";

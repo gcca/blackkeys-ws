@@ -1,0 +1,11 @@
+namespace blackkeys.schemas;
+
+table UserAuth {
+  username:string (required);
+  password:string (required);
+}
+
+table UserSignup {
+  username:string (required);
+  password:string (required);
+}

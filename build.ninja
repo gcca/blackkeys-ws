@@ -1,0 +1,11 @@
+flatc = flatc
+
+rule flatc_py
+  command = $flatc --python -o . $in
+  description = flatc --python $in
+
+build blackkeys/schemas/HydrationMessage.py blackkeys/schemas/UserAuth.py blackkeys/schemas/UserSignup.py blackkeys/schemas/__init__.py: flatc_py schemas/hydrant.fbs schemas/auth.fbs
+
+build schemas: phony blackkeys/schemas/HydrationMessage.py blackkeys/schemas/UserAuth.py blackkeys/schemas/UserSignup.py blackkeys/schemas/__init__.py
+
+default schemas
